@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #fbfafc;
+  color: #111014;
+}
+
+::selection {
+  background: #f6c945;
+  color: #111014;
+}
+
+.container-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.focus-ring {
+  @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-yellow;
+}
+
+.table-wrap {
+  @apply min-w-0 max-w-full overflow-x-auto rounded-lg border border-black/10 bg-white;
+}
+
+.data-table {
+  @apply min-w-[760px] divide-y divide-black/10 text-left text-sm;
+}
+
+.data-table th {
+  @apply whitespace-nowrap bg-black/[0.03] px-4 py-3 font-semibold text-black;
+}
+
+.data-table td {
+  @apply whitespace-nowrap px-4 py-3 text-black/70;
+}
