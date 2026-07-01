@@ -24,7 +24,7 @@ export default function AdminMockTestsPage() {
             {test.questions.map((question, index) => (
               <div key={question.prompt} className="rounded-lg border border-black/10 p-4">
                 <p className="font-bold text-brand-ink">{index + 1}. {question.prompt}</p>
-                <div className="mt-3 grid gap-2 text-sm text-black/65">
+                <div className="mt-3 grid gap-2 text-sm text-black/70">
                   {question.options.map((option, optionIndex) => (
                     <p key={option} className="rounded-md bg-black/[0.025] px-3 py-2">{String.fromCharCode(65 + optionIndex)}. {option}</p>
                   ))}

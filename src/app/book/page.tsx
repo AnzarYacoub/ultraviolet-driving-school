@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CalendarDays, Clock, CreditCard, GraduationCap, ShieldAlert, Users } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
 import { Badge, Button, Card, Field, InfoTile, SectionHeader, SelectField, TextArea } from "@/components/ui";
@@ -7,14 +8,32 @@ export default function BookPage() {
   return (
     <PageShell>
       <section className="bg-brand-purpleSoft py-14">
-        <div className="container-shell grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <SectionHeader eyebrow="Book Class" title="Request a practical class time" copy="Students book full driving packages, choose a preferred day and time, then wait for manual payment/admin confirmation." />
-          <div className="grid gap-4 sm:grid-cols-2">
-            <InfoTile icon={<CalendarDays size={18} />} label="Days" value="Monday to Sunday" />
-            <InfoTile icon={<Clock size={18} />} label="Hours" value="8:00 AM to 5:00 PM" />
-            <InfoTile icon={<Users size={18} />} label="Capacity" value="Up to 4 students per time slot" />
-            <InfoTile icon={<GraduationCap size={18} />} label="Booking" value="Full package booking only" />
+        <div className="container-shell grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+          <div>
+            <Badge tone="yellow">Practical driving class booking</Badge>
+            <SectionHeader as="h1" title="Request your driving lesson time" copy="Students book full driving packages, choose a preferred day and time, then wait for manual payment/admin confirmation." />
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              <InfoTile icon={<CalendarDays size={18} />} label="Days" value="Monday to Sunday" />
+              <InfoTile icon={<Clock size={18} />} label="Hours" value="8:00 AM to 5:00 PM" />
+              <InfoTile icon={<Users size={18} />} label="Capacity" value="Up to 4 students per time slot" />
+              <InfoTile icon={<GraduationCap size={18} />} label="Booking" value="Full package booking only" />
+            </div>
           </div>
+          <Card className="overflow-hidden bg-white p-3">
+            <div className="relative aspect-[16/10] overflow-hidden rounded-lg">
+              <Image
+                src="/images/driving-lesson-hero.png"
+                alt="Instructor guiding a driving school vehicle through cones"
+                fill
+                sizes="(min-width: 1024px) 600px, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent p-5 text-white">
+                <p className="text-xs font-bold uppercase tracking-[0.14em] text-brand-yellow">Practical lesson request</p>
+                <p className="mt-2 text-xl font-black">Choose your package, date, time, and session duration.</p>
+              </div>
+            </div>
+          </Card>
         </div>
       </section>
       <section className="py-14">
@@ -51,7 +70,7 @@ export default function BookPage() {
             <Card className="bg-brand-ink text-white">
               <Badge tone="yellow">Important Rule</Badge>
               <h3 className="mt-4 text-2xl font-black">Rescheduling notice</h3>
-              <p className="mt-3 leading-7 text-white/72">
+              <p className="mt-3 leading-7 text-white/70">
                 Students must notify the school 3 to 4 hours before class starts so the session can be rebooked. If notice is not provided in time, that session may be lost.
               </p>
               <div className="mt-6 flex items-start gap-3 rounded-lg bg-white/10 p-4 text-sm text-white/75">
@@ -64,7 +83,7 @@ export default function BookPage() {
                 <div className="rounded-md bg-brand-yellow/30 p-3 text-brand-ink"><CreditCard size={20} /></div>
                 <div>
                   <h3 className="font-black text-brand-ink">Manual/local payment</h3>
-                  <p className="mt-2 text-sm leading-6 text-black/65">Payment options are MMG payment and cash payment with admin confirmation. Stripe, PayPal, and card checkout are intentionally not included yet.</p>
+                  <p className="mt-2 text-sm leading-6 text-black/70">Payment options are MMG payment and cash payment with admin confirmation. Stripe, PayPal, and card checkout are intentionally not included yet.</p>
                 </div>
               </div>
             </Card>

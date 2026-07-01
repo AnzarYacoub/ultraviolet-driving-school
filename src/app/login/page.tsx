@@ -10,7 +10,7 @@ export default function LoginPage() {
           <BrandLogo />
           <div className="mt-8"><Badge tone="purple">Student Portal</Badge></div>
           <h1 className="mt-8 text-4xl font-black text-brand-ink">Student login</h1>
-          <p className="mt-4 max-w-md leading-7 text-black/65">
+          <p className="mt-4 max-w-md leading-7 text-black/70">
             Access bookings, payment instructions, live class information, mock tests, and the digital discount card.
           </p>
         </div>

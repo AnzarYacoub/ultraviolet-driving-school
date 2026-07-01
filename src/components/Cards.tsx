@@ -114,24 +114,24 @@ export function DigitalDiscountCard({ compact = false }: { compact?: boolean }) 
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-brand-yellow">Ultraviolet 592</p>
             <h3 className="mt-2 text-2xl font-black">Student Discount Card</h3>
           </div>
-          <div className="flex size-12 items-center justify-center rounded-lg bg-white/12 text-brand-yellow">
+          <div className="flex size-12 items-center justify-center rounded-lg bg-white/10 text-brand-yellow">
             <ShieldCheck size={24} />
           </div>
         </div>
         <div className="relative mt-8 grid gap-4 sm:grid-cols-2">
-          <div className="rounded-md bg-white/8 p-3">
+          <div className="rounded-md bg-white/[0.08] p-3">
             <p className="text-xs uppercase text-white/50">Student Name</p>
             <p className="font-bold">{student.name}</p>
           </div>
-          <div className="rounded-md bg-white/8 p-3">
+          <div className="rounded-md bg-white/[0.08] p-3">
             <p className="text-xs uppercase text-white/50">Student ID</p>
             <p className="font-bold">{student.id}</p>
           </div>
-          <div className="rounded-md bg-white/8 p-3">
+          <div className="rounded-md bg-white/[0.08] p-3">
             <p className="text-xs uppercase text-white/50">Package</p>
             <p className="font-bold">{student.packageName}</p>
           </div>
-          <div className="rounded-md bg-white/8 p-3">
+          <div className="rounded-md bg-white/[0.08] p-3">
             <p className="text-xs uppercase text-white/50">Status</p>
             <p className="font-bold text-brand-yellow">Active Student</p>
           </div>

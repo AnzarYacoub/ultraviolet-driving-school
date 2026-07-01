@@ -54,18 +54,22 @@ export function SectionHeader({
   title,
   copy,
   align = "left",
-  tone = "light"
+  tone = "light",
+  as = "h2"
 }: {
   eyebrow?: string;
   title: string;
   copy?: string;
   align?: "left" | "center";
   tone?: "light" | "dark";
+  as?: "h1" | "h2";
 }) {
+  const Heading = as;
+
   return (
     <div className={cn("max-w-3xl", align === "center" && "mx-auto text-center")}>
       {eyebrow ? <p className={cn("mb-3 text-sm font-bold uppercase tracking-[0.16em]", tone === "dark" ? "text-brand-yellow" : "text-brand-purple")}>{eyebrow}</p> : null}
-      <h2 className={cn("text-3xl font-black tracking-normal md:text-4xl", tone === "dark" ? "text-white" : "text-brand-ink")}>{title}</h2>
+      <Heading className={cn("text-3xl font-black tracking-normal md:text-4xl", tone === "dark" ? "text-white" : "text-brand-ink")}>{title}</Heading>
       {copy ? <p className={cn("mt-4 text-base leading-7 md:text-lg", tone === "dark" ? "text-white/70" : "text-black/70")}>{copy}</p> : null}
     </div>
   );

@@ -19,7 +19,7 @@ export default function StudentClassesPage() {
       <Card className="mt-6 bg-brand-purpleSoft">
         <Badge tone="purple">Student Note</Badge>
         <h2 className="text-xl font-black text-brand-ink">Student Instructions</h2>
-        <p className="mt-3 leading-7 text-black/65">
+        <p className="mt-3 leading-7 text-black/70">
           Join live classes on time, keep your package/payment status updated, and check this area for Zoom, Google Meet, WhatsApp, or other class access instructions.
         </p>
       </Card>

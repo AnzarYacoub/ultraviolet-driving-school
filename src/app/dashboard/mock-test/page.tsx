@@ -45,9 +45,9 @@ export default function StudentMockTestPage() {
           <Badge tone={submitted ? "purple" : "yellow"}>{submitted ? "Preview submitted" : "Not submitted"}</Badge>
           <h2 className="text-xl font-black text-brand-ink">Results</h2>
           {submitted ? (
-            <p className="mt-3 leading-7 text-black/65">Prototype result submitted. In the Supabase version, scoring, attempt locking, and admin unlocks will be stored securely.</p>
+            <p className="mt-3 leading-7 text-black/70">Prototype result submitted. In the Supabase version, scoring, attempt locking, and admin unlocks will be stored securely.</p>
           ) : (
-            <p className="mt-3 leading-7 text-black/65">Submit the test to preview the result state. Once completed, the attempt becomes locked until admin releases another attempt.</p>
+            <p className="mt-3 leading-7 text-black/70">Submit the test to preview the result state. Once completed, the attempt becomes locked until admin releases another attempt.</p>
           )}
         </Card>
       </div>

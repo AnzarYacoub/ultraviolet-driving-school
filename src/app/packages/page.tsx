@@ -1,7 +1,7 @@
 import { PackageCard } from "@/components/Cards";
 import { PageShell } from "@/components/PageShell";
 import { Badge, Card, InfoTile, SectionHeader } from "@/components/ui";
-import { Clock, CreditCard, ShieldCheck, Users } from "lucide-react";
+import { CarFront, Clock, CreditCard, Route, ShieldCheck, TrafficCone, Users } from "lucide-react";
 import { packages } from "@/data/mock";
 
 export default function PackagesPage() {
@@ -10,9 +10,12 @@ export default function PackagesPage() {
       <section className="bg-brand-purpleSoft py-14">
         <div className="container-shell">
           <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-end">
-            <SectionHeader eyebrow="Packages" title="Choose a practical driving package" copy="Compare full driving packages for new learners, refresher students, exam preparation, and priority support. Final prices and session counts can be updated from the admin dashboard later." />
-            <Card className="bg-white/90">
-              <Badge tone="yellow">Booking rules</Badge>
+            <div>
+              <Badge tone="yellow"><TrafficCone size={14} /> Driving lesson packages</Badge>
+              <SectionHeader as="h1" title="Choose the package that fits your driving journey" copy="Compare full driving packages for new learners, refresher students, exam preparation, and priority support. Each package is built around practical driving progress, confidence, and road readiness." />
+            </div>
+            <Card className="bg-white/95">
+              <Badge tone="yellow">Before you book</Badge>
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
                 <InfoTile icon={<Clock size={18} />} label="Hours" value="8 AM to 5 PM" />
                 <InfoTile icon={<Users size={18} />} label="Capacity" value="4 students per slot" />
@@ -21,6 +24,13 @@ export default function PackagesPage() {
               </div>
             </Card>
           </div>
+        </div>
+      </section>
+      <section className="border-b border-black/10 bg-white py-8">
+        <div className="container-shell grid gap-4 md:grid-cols-3">
+          <InfoTile icon={<CarFront size={18} />} label="Practical Focus" value="Road lessons and confidence building" />
+          <InfoTile icon={<Route size={18} />} label="Progress Path" value="Beginner to priority support" />
+          <InfoTile icon={<TrafficCone size={18} />} label="Class Readiness" value="Theory, vehicle basics, and mock prep" />
         </div>
       </section>
       <section className="py-14">
