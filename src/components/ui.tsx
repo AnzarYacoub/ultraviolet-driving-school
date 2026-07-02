@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   href?: string;
-  variant?: "primary" | "secondary" | "dark" | "ghost" | "soft";
+  variant?: "primary" | "secondary" | "dark" | "ghost" | "soft" | "outlineDark";
 };
 
 export function Button({ href, variant = "primary", className, children, ...props }: ButtonProps) {
@@ -15,7 +15,8 @@ export function Button({ href, variant = "primary", className, children, ...prop
     secondary: "bg-brand-yellow text-brand-ink shadow-soft hover:bg-yellow-300",
     dark: "bg-brand-ink text-white hover:bg-black",
     ghost: "bg-white text-brand-purple ring-1 ring-brand-purple/20 hover:bg-brand-purpleSoft",
-    soft: "bg-brand-purpleSoft text-brand-purple hover:bg-brand-purple hover:text-white"
+    soft: "bg-brand-purpleSoft text-brand-purple hover:bg-brand-purple hover:text-white",
+    outlineDark: "border border-white/20 bg-white/[0.08] text-white shadow-soft hover:bg-white/15"
   };
 
   if (href) {

@@ -1,15 +1,22 @@
 import Image from "next/image";
-import { BookOpenCheck, CalendarCheck, CarFront, CheckCircle2, Clock, CreditCard, GraduationCap, MessageCircle, Route, ShieldCheck, TicketCheck, TrafficCone, Users } from "lucide-react";
+import { BookOpenCheck, CalendarCheck, CarFront, CheckCircle2, ClipboardCheck, Clock, CreditCard, Crown, GraduationCap, MessageCircle, Route, ShieldCheck, Star, TicketCheck, Users } from "lucide-react";
 import { DigitalDiscountCard, OnlineClassCard, PackageCard, PartnerBusinessCard } from "@/components/Cards";
 import { PageShell } from "@/components/PageShell";
 import { Badge, Button, Card, Field, InfoTile, SectionHeader, TextArea } from "@/components/ui";
 import { discountPartners, onlineClasses, packages } from "@/data/mock";
 
-const heroServices = [
-  { label: "Practical Lessons", value: "Road-ready driving classes", icon: <CarFront size={18} /> },
-  { label: "Full Packages", value: "Teen, refresher, Bronze to VIP", icon: <GraduationCap size={18} /> },
-  { label: "Mock Tests", value: "One-attempt theory prep", icon: <BookOpenCheck size={18} /> },
-  { label: "Discount Card", value: "Student partner benefits", icon: <TicketCheck size={18} /> }
+const heroTrustBadges = [
+  { label: "Professional Instructors", icon: <ShieldCheck size={20} /> },
+  { label: "Mock Test Preparation", icon: <ClipboardCheck size={20} /> },
+  { label: "Flexible Booking", icon: <CalendarCheck size={20} /> },
+  { label: "Student Benefits", icon: <Star size={20} /> }
+];
+
+const heroFeatureCards = [
+  { label: "Practical Lessons", value: "Road-ready driving classes with focused guidance.", icon: <CarFront size={28} /> },
+  { label: "Theory Support", value: "Live online classes and study preparation.", icon: <BookOpenCheck size={28} /> },
+  { label: "Mock Tests", value: "Practice with confidence before exam day.", icon: <ClipboardCheck size={28} /> },
+  { label: "Full Packages", value: "Teen, refresher, Bronze, Silver, Gold, and VIP.", icon: <Crown size={28} /> }
 ];
 
 const howItWorks = [
@@ -31,60 +38,84 @@ const whyChoose = [
 export default function HomePage() {
   return (
     <PageShell>
-      <section className="overflow-hidden bg-[radial-gradient(circle_at_top_right,#f6c94545,transparent_28%),linear-gradient(135deg,#2a0f45,#57228f_56%,#111014)] py-14 text-white md:py-20">
-        <div className="container-shell grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
-          <div>
-            <Badge tone="yellow"><TrafficCone size={14} /> Ultraviolet 592 Driving School</Badge>
-            <h1 className="mt-5 text-4xl font-black tracking-normal md:text-6xl">Learn to drive with confidence</h1>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-white/80">
-              Professional practical driving lessons, full driving packages, live theory support, mock test preparation, student bookings, and digital student benefits with Ultraviolet Driving School.
-            </p>
-            <div className="mt-8 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-              <Button href="/book" variant="secondary">
-                Book Driving Class
-              </Button>
-              <Button href="/packages" variant="ghost">
-                View Packages
-              </Button>
-              <Button href="https://wa.me/5926022583" variant="dark">
-                <MessageCircle size={18} /> WhatsApp
-              </Button>
-              <Button href="/login" variant="soft">
-                Student Login
-              </Button>
+      <section className="relative isolate overflow-hidden bg-[radial-gradient(circle_at_9%_14%,rgba(246,201,69,0.18),transparent_25%),radial-gradient(circle_at_72%_18%,rgba(127,56,210,0.6),transparent_34%),linear-gradient(135deg,#050207_0%,#180829_42%,#09070d_100%)] pb-10 pt-12 text-white md:pb-16 md:pt-16">
+        <div className="pointer-events-none absolute -right-32 bottom-[-14rem] h-[34rem] w-[58rem] rounded-[50%] border border-brand-yellow/35 bg-brand-purple/20" />
+        <div className="pointer-events-none absolute bottom-5 left-[-8rem] h-24 w-[56rem] rotate-[-2deg] rounded-[50%] border-t-4 border-brand-yellow/80 opacity-90" />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(0deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:72px_72px] opacity-[0.08]" />
+        <div className="container-shell relative">
+          <div className="grid items-center gap-9 lg:grid-cols-[0.9fr_1.1fr]">
+            <div className="relative z-10">
+              <Badge tone="yellow"><CarFront size={14} /> Ultraviolet 592 Driving School</Badge>
+              <h1 className="mt-6 max-w-3xl text-5xl font-black leading-[0.95] tracking-normal sm:text-6xl lg:text-7xl">
+                Learn to drive with <span className="text-brand-yellow">confidence</span>
+              </h1>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-white/80 md:text-xl">
+                Professional practical driving lessons, full driving packages, live theory support, mock test preparation, student bookings, and digital student benefits with Ultraviolet Driving School.
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <Button href="/book" variant="secondary" className="min-h-14 px-6 text-base">
+                  <CalendarCheck size={19} /> Book Driving Class
+                </Button>
+                <Button href="/packages" variant="outlineDark" className="min-h-14 px-6 text-base">
+                  View Packages
+                </Button>
+                <Button href="https://wa.me/5926022583" variant="dark" className="min-h-14 border border-white/15 bg-black/55 px-6 text-base hover:bg-black">
+                  <MessageCircle size={19} /> WhatsApp
+                </Button>
+                <Button href="/login" variant="ghost" className="min-h-14 px-6 text-base">
+                  Student Login
+                </Button>
+              </div>
+              <div className="mt-9 grid gap-3 text-sm text-white/80 sm:grid-cols-2 xl:grid-cols-4">
+                {heroTrustBadges.map((item) => (
+                  <span key={item.label} className="flex items-center gap-3 border-white/15 py-2 font-semibold sm:border-r sm:pr-4 last:border-r-0">
+                    <span className="flex size-9 shrink-0 items-center justify-center rounded-md bg-brand-purple text-brand-yellow shadow-[0_10px_28px_rgba(87,34,143,0.35)]">{item.icon}</span>
+                    {item.label}
+                  </span>
+                ))}
+              </div>
             </div>
-            <div className="mt-10 grid gap-3 text-sm text-white/75 sm:grid-cols-2">
-              {["Practical Lessons", "Theory Support", "Mock Tests", "Flexible Booking", "Student Discount Benefits", "Full Package Training"].map((item) => (
-                <span key={item} className="flex items-center gap-2 rounded-md border border-white/10 bg-white/[0.08] px-3 py-2 font-semibold">
-                  <CheckCircle2 size={16} className="text-brand-yellow" />
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-          <div className="relative">
-            <div className="absolute -inset-3 rounded-lg bg-brand-yellow/20 blur-2xl" />
-            <Card className="relative overflow-hidden border-white/20 bg-white p-3 shadow-lift">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-brand-ink">
+            <div className="relative min-h-[360px] lg:min-h-[560px]">
+              <div className="absolute -inset-2 rounded-full bg-brand-purple/30 blur-3xl" />
+              <div className="relative h-[360px] overflow-hidden rounded-lg border border-white/15 bg-white/5 shadow-[0_36px_100px_rgba(0,0,0,0.42)] sm:h-[460px] lg:absolute lg:-right-28 lg:top-0 lg:h-[560px] lg:w-[calc(100%+7rem)] lg:rounded-l-[44%] lg:rounded-r-none">
                 <Image
                   src="/images/driving-lesson-hero.png"
                   alt="Driving instructor guiding a student vehicle through cones"
                   fill
                   priority
-                  sizes="(min-width: 1024px) 560px, 100vw"
-                  className="object-cover"
+                  sizes="(min-width: 1024px) 720px, 100vw"
+                  className="object-cover object-center lg:object-[48%_center]"
                 />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent p-5 text-white">
-                  <Badge tone="yellow"><Route size={14} /> Practical road training</Badge>
-                  <p className="mt-3 max-w-md text-2xl font-black">Driving lessons, theory support, and booking tools in one place.</p>
+                <div className="absolute inset-0 bg-gradient-to-r from-brand-purpleDark/75 via-brand-purpleDark/20 to-black/10" />
+                <div className="absolute inset-y-0 left-0 hidden w-32 bg-gradient-to-r from-[#12051f] to-transparent lg:block" />
+                <div className="absolute bottom-6 right-4 max-w-xs rounded-lg border border-white/15 bg-brand-purple/80 p-4 text-white shadow-lift backdrop-blur sm:right-8">
+                  <div className="flex items-center gap-3">
+                    <span className="flex size-12 items-center justify-center rounded-full border-2 border-brand-yellow text-brand-yellow">
+                      <CheckCircle2 size={28} />
+                    </span>
+                    <div>
+                      <p className="font-bold">Quality lessons.</p>
+                      <p className="text-sm text-white/75">Safe drivers. Better roads.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="grid gap-3 p-2 pt-5 sm:grid-cols-2">
-                {heroServices.map((item) => (
-                  <InfoTile key={item.label} icon={item.icon} label={item.label} value={item.value} />
-                ))}
-              </div>
-            </Card>
+            </div>
+          </div>
+
+          <div className="relative z-10 mt-8 rounded-lg border border-white/20 bg-white p-4 text-brand-ink shadow-[0_24px_80px_rgba(0,0,0,0.3)] md:mt-[-1rem] md:p-6">
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+              {heroFeatureCards.map((item) => (
+                <div key={item.label} className="flex gap-4 border-black/10 pb-5 md:pb-0 lg:border-r lg:pr-5 last:lg:border-r-0">
+                  <div className="flex size-16 shrink-0 items-center justify-center rounded-lg bg-brand-purple text-white shadow-[inset_0_0_0_2px_rgba(255,255,255,0.12),0_14px_30px_rgba(87,34,143,0.24)]">{item.icon}</div>
+                  <div>
+                    <h3 className="text-sm font-black uppercase tracking-normal text-brand-purpleDark">{item.label}</h3>
+                    <p className="mt-2 text-sm leading-6 text-black/70">{item.value}</p>
+                    <span className="mt-4 block h-1 w-14 rounded-full bg-brand-purple" />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -94,6 +125,7 @@ export default function HomePage() {
           <div className="grid gap-4 md:grid-cols-4">
             {howItWorks.map((item) => (
               <Card key={item.step} className="relative overflow-hidden p-5">
+                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand-yellow via-brand-purple to-brand-purpleDark" />
                 <div className="flex items-center justify-between gap-4">
                   <div className="rounded-md bg-brand-purpleSoft p-3 text-brand-purple">{item.icon}</div>
                   <span className="text-3xl font-black text-brand-purple/10">{item.step}</span>

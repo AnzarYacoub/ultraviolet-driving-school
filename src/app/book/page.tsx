@@ -7,11 +7,12 @@ import { packages } from "@/data/mock";
 export default function BookPage() {
   return (
     <PageShell>
-      <section className="bg-brand-purpleSoft py-14">
+      <section className="relative overflow-hidden bg-[radial-gradient(circle_at_18%_18%,rgba(246,201,69,0.16),transparent_26%),radial-gradient(circle_at_78%_10%,rgba(87,34,143,0.72),transparent_32%),linear-gradient(135deg,#050207,#1a082d_48%,#09070d)] py-14 text-white">
+        <div className="pointer-events-none absolute -right-28 top-10 h-72 w-96 rounded-full border border-brand-yellow/25 bg-brand-purple/15" />
         <div className="container-shell grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div>
             <Badge tone="yellow">Practical driving class booking</Badge>
-            <SectionHeader as="h1" title="Request your driving lesson time" copy="Students book full driving packages, choose a preferred day and time, then wait for manual payment/admin confirmation." />
+            <SectionHeader tone="dark" as="h1" title="Request your driving lesson time" copy="Students book full driving packages, choose a preferred day and time, then wait for manual payment/admin confirmation." />
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               <InfoTile icon={<CalendarDays size={18} />} label="Days" value="Monday to Sunday" />
               <InfoTile icon={<Clock size={18} />} label="Hours" value="8:00 AM to 5:00 PM" />
@@ -19,7 +20,7 @@ export default function BookPage() {
               <InfoTile icon={<GraduationCap size={18} />} label="Booking" value="Full package booking only" />
             </div>
           </div>
-          <Card className="overflow-hidden bg-white p-3">
+          <Card className="overflow-hidden border-white/15 bg-white p-3 shadow-[0_24px_80px_rgba(0,0,0,0.28)]">
             <div className="relative aspect-[16/10] overflow-hidden rounded-lg">
               <Image
                 src="/images/driving-lesson-hero.png"
