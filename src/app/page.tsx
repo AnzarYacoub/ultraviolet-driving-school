@@ -30,6 +30,16 @@ const lessonVideos = [
   }
 ];
 
+const marqueePhrases = [
+  "PRACTICAL LESSONS",
+  "THEORY SUPPORT",
+  "MOCK TEST PREPARATION",
+  "FLEXIBLE BOOKING",
+  "STUDENT DISCOUNT CARD",
+  "ROAD CONFIDENCE",
+  "SAFE DRIVING STARTS HERE"
+];
+
 const howItWorks = [
   { step: "01", title: "Choose a package", copy: "Pick the driving package that matches your experience level.", icon: <GraduationCap size={20} /> },
   { step: "02", title: "Book your class", copy: "Request a preferred day, time, and 1-hour or 2-hour session.", icon: <CalendarCheck size={20} /> },
@@ -37,13 +47,28 @@ const howItWorks = [
   { step: "04", title: "Start learning", copy: "Attend practical lessons, theory support, and mock test prep.", icon: <CarFront size={20} /> }
 ];
 
-const whyChoose = [
-  { title: "Practical driving guidance", copy: "Structured road practice for new, returning, and exam-ready students.", icon: <CarFront size={22} /> },
-  { title: "Live theory support", copy: "Online classes for theory preparation, road signs, road rules, and vehicle basics.", icon: <BookOpenCheck size={22} /> },
-  { title: "Flexible package options", copy: "Teen, Refreshers, Bronze, Silver, Gold, and VIP packages for different goals.", icon: <GraduationCap size={22} /> },
-  { title: "Mock exam preparation", copy: "One-attempt mock test flow with admin unlock support for future retakes.", icon: <ShieldCheck size={22} /> },
-  { title: "Student discount benefits", copy: "Digital card and partner directory for future active-student perks.", icon: <TicketCheck size={22} /> },
-  { title: "Easy booking process", copy: "Clear schedule rules, session options, capacity, and rescheduling policy.", icon: <CalendarCheck size={22} /> }
+const supportLabels = ["Driving Basics", "Parking & Reversing", "Road Rules", "Test Confidence"];
+
+const outcomeCards = [
+  { title: "Build Driving Confidence", copy: "Grow from nervous beginner to road-ready learner with patient, practical guidance.", icon: <ShieldCheck size={22} /> },
+  { title: "Learn Road Rules", copy: "Strengthen theory knowledge, signs, right-of-way, and safe road habits.", icon: <BookOpenCheck size={22} /> },
+  { title: "Master Parking & Reversing", copy: "Practice key manoeuvres with simple steps and steady instructor feedback.", icon: <Route size={22} /> },
+  { title: "Prepare for Your Test", copy: "Use mock tests, road practice, and test-day support to feel ready.", icon: <ClipboardCheck size={22} /> }
+];
+
+const serviceCards = [
+  { title: "Practical Driving Lessons", copy: "Guided road sessions for new learners, teen students, and returning drivers.", icon: <CarFront size={22} /> },
+  { title: "Live Theory Support", copy: "Online support for road signs, rules, safety, and vehicle basics.", icon: <BookOpenCheck size={22} /> },
+  { title: "Mock Test Preparation", copy: "Theory practice and road mock support to build exam confidence.", icon: <ClipboardCheck size={22} /> },
+  { title: "Digital Discount Card", copy: "Student benefit card concept with partner discounts and verification details.", icon: <TicketCheck size={22} /> },
+  { title: "Test Day Assistance", copy: "Focused support for students preparing for their practical test day.", icon: <ShieldCheck size={22} /> },
+  { title: "VIP Driving Support", copy: "Priority schedule, pick-up/drop-off, highway, night drive, and advanced coaching.", icon: <Crown size={22} /> }
+];
+
+const communityActions = [
+  { title: "Register as a Student", href: "/register", icon: <Users size={22} /> },
+  { title: "Book a Driving Package", href: "/book", icon: <CalendarCheck size={22} /> },
+  { title: "Join the Discount Card Programme", href: "/dashboard/discount-card", icon: <TicketCheck size={22} /> }
 ];
 
 export default function HomePage() {
@@ -131,6 +156,122 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section aria-label="Driving school highlights" className="overflow-hidden border-y border-brand-yellow/30 bg-brand-ink py-4 text-white">
+        <div className="marquee-track flex w-max items-center gap-4 whitespace-nowrap text-sm font-black uppercase tracking-[0.18em] text-brand-yellow">
+          {[...marqueePhrases, ...marqueePhrases].map((phrase, index) => (
+            <span key={`${phrase}-${index}`} className="inline-flex items-center gap-4">
+              {phrase}
+              <span className="text-white/35">{"//"}</span>
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-white py-16 md:py-20">
+        <div className="container-shell grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
+          <div>
+            <Badge tone="purple">Welcome</Badge>
+            <h2 className="mt-4 text-4xl font-black tracking-normal text-brand-ink md:text-5xl">Welcome to Ultraviolet Driving School</h2>
+          </div>
+          <Card className="border-brand-purple/15 bg-[linear-gradient(135deg,#ffffff,#f8f4fd)]">
+            <p className="text-lg leading-8 text-black/70">
+              Ultraviolet Driving School helps new learners and returning drivers build confidence through practical lessons, structured packages, theory support, mock tests, and guided driving preparation.
+            </p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              {["Teen learners", "Refresher lessons", "Theory support", "Booking guidance"].map((item) => (
+                <span key={item} className="flex items-center gap-2 rounded-md bg-brand-purpleSoft px-3 py-2 text-sm font-bold text-brand-purple">
+                  <CheckCircle2 size={16} />
+                  {item}
+                </span>
+              ))}
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      <section className="bg-brand-purpleSoft py-16 md:py-20">
+        <div className="container-shell grid gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
+          <Card className="relative overflow-hidden bg-brand-ink text-white">
+            <div className="absolute -right-16 -top-16 size-56 rounded-full bg-brand-yellow/15" />
+            <Badge tone="yellow">Driving Support Team</Badge>
+            <h2 className="relative mt-5 text-3xl font-black tracking-normal md:text-4xl">Guided by patient driving instructors</h2>
+            <p className="relative mt-4 max-w-2xl leading-7 text-white/70">
+              Our instructors guide students through practical lessons, road confidence, parking, reversing, road rules, and test preparation with steady support.
+            </p>
+            <Button href="/book" variant="secondary" className="relative mt-6">Book With Guidance</Button>
+          </Card>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {supportLabels.map((label) => (
+              <div key={label} className="rounded-lg border border-black/10 bg-white p-5 shadow-soft">
+                <div className="flex size-11 items-center justify-center rounded-md bg-brand-purple text-brand-yellow">
+                  <CheckCircle2 size={20} />
+                </div>
+                <h3 className="mt-4 text-lg font-black text-brand-ink">{label}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-16 md:py-20">
+        <div className="container-shell">
+          <SectionHeader eyebrow="Student Outcomes" title="What We Help You Do" copy="Every section of the platform points students toward practical confidence, safer decisions, and clearer test preparation." />
+          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {outcomeCards.map((item) => (
+              <Card key={item.title} className="h-full transition duration-200 hover:-translate-y-0.5 hover:shadow-lift">
+                <div className="flex size-12 items-center justify-center rounded-lg bg-brand-purple text-white">{item.icon}</div>
+                <h3 className="mt-5 text-lg font-black text-brand-ink">{item.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-black/70">{item.copy}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_right,rgba(246,201,69,0.24),transparent_32%),linear-gradient(135deg,#111014,#2a0f45_62%,#57228f)] py-16 text-white md:py-20">
+        <div className="container-shell grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-center">
+          <div>
+            <Badge tone="yellow">Featured Booking Path</Badge>
+            <h2 className="mt-4 text-4xl font-black tracking-normal md:text-5xl">Start your driving journey</h2>
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-white/75">
+              Choose your package, book your session, confirm payment, and begin learning with structured guidance.
+            </p>
+          </div>
+          <Card className="border-white/15 bg-white/95">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <Button href="/packages" variant="primary">View Packages</Button>
+              <Button href="/book" variant="secondary">Book a Class</Button>
+            </div>
+            <div className="mt-5 grid gap-3 text-sm text-black/70">
+              {howItWorks.map((item) => (
+                <div key={item.step} className="flex items-start gap-3 rounded-md bg-black/[0.025] p-3">
+                  <span className="font-black text-brand-purple">{item.step}</span>
+                  <span>{item.title}</span>
+                </div>
+              ))}
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      <section className="bg-brand-purpleSoft py-16 md:py-20">
+        <div className="container-shell">
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <SectionHeader eyebrow="Services" title="How We Serve You" copy="From practical road sessions to theory preparation and student benefits, each service is shaped around a clearer driving journey." />
+            <Button href="/packages" variant="ghost">View Packages</Button>
+          </div>
+          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {serviceCards.map((item) => (
+              <Card key={item.title} className="h-full">
+                <div className="flex size-12 items-center justify-center rounded-lg bg-brand-purple text-white">{item.icon}</div>
+                <h3 className="mt-5 text-lg font-black text-brand-ink">{item.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-black/70">{item.copy}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="relative overflow-hidden bg-brand-ink py-16 text-white md:py-20">
         <div className="pointer-events-none absolute -left-32 top-[-10rem] size-96 rounded-full bg-brand-purple/30 blur-3xl" />
         <div className="pointer-events-none absolute bottom-[-12rem] right-[-10rem] size-[28rem] rounded-full bg-brand-yellow/10 blur-3xl" />
@@ -138,8 +279,8 @@ export default function HomePage() {
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <SectionHeader
               tone="dark"
-              eyebrow="Watch Our Driving Lessons"
-              title="See Ultraviolet Driving School in action"
+              eyebrow="Video Preview"
+              title="Watch Ultraviolet Driving School in action"
               copy="Watch our driving school experience and get a better feel for the practical guidance, confidence building, and student support offered through Ultraviolet Driving School."
             />
             <Badge tone="yellow"><PlayCircle size={14} /> Muted autoplay enabled</Badge>
@@ -184,21 +325,6 @@ export default function HomePage() {
                   <div className="rounded-md bg-brand-purpleSoft p-3 text-brand-purple">{item.icon}</div>
                   <span className="text-3xl font-black text-brand-purple/10">{item.step}</span>
                 </div>
-                <h3 className="mt-5 text-lg font-black text-brand-ink">{item.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-black/70">{item.copy}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-brand-purpleSoft py-16 md:py-20">
-        <div className="container-shell">
-          <SectionHeader eyebrow="Why Learn With Ultraviolet" title="Driving-school support from first booking to exam prep" copy="Ultraviolet Driving School brings practical lessons, theory support, mock testing, flexible packages, and student benefits into a simple platform students can understand quickly." />
-          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {whyChoose.map((item) => (
-              <Card key={item.title} className="h-full transition duration-200 hover:-translate-y-0.5 hover:shadow-lift">
-                <div className="flex size-12 items-center justify-center rounded-lg bg-brand-purple text-white">{item.icon}</div>
                 <h3 className="mt-5 text-lg font-black text-brand-ink">{item.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-black/70">{item.copy}</p>
               </Card>
@@ -290,9 +416,31 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="bg-brand-purpleSoft py-16 md:py-20">
+        <div className="container-shell">
+          <SectionHeader eyebrow="Student Community" title="Be part of the Ultraviolet community" copy="Register, book your package, and stay connected to future student benefits, discount-card updates, and class announcements." />
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
+            {communityActions.map((item) => (
+              <Card key={item.title} className="h-full">
+                <div className="flex size-12 items-center justify-center rounded-lg bg-brand-purple text-white">{item.icon}</div>
+                <h3 className="mt-5 text-lg font-black text-brand-ink">{item.title}</h3>
+                <Button href={item.href} variant="ghost" className="mt-5 w-full">Open</Button>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="contact" className="py-16 md:py-20">
         <div className="container-shell grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
-          <SectionHeader eyebrow="Contact" title="Start your driving journey" copy="Call or WhatsApp 602-2583, or send a message for package selection and practical booking guidance." />
+          <div>
+            <SectionHeader eyebrow="Stay Connected" title="Stay connected with Ultraviolet" copy="Contact the school for packages, practical bookings, theory class updates, mock test support, and discount-card programme details." />
+            <div className="mt-6 grid gap-3 text-sm font-bold text-brand-ink">
+              <p className="rounded-md bg-brand-purpleSoft px-4 py-3">Phone/WhatsApp: 602-2583</p>
+              <p className="rounded-md bg-brand-purpleSoft px-4 py-3">Email: Udsdrivingschool30@gmail.com</p>
+              <p className="rounded-md bg-brand-purpleSoft px-4 py-3">Social media: Facebook, TikTok, Instagram, and YouTube placeholders</p>
+            </div>
+          </div>
           <Card>
             <div className="grid gap-4 sm:grid-cols-2">
               <Field label="Name" placeholder="Your full name" />
@@ -303,7 +451,7 @@ export default function HomePage() {
             </div>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Button>Send Message</Button>
-              <Button href="https://wa.me/5926022583" variant="secondary">WhatsApp 602-2583</Button>
+              <Button href="https://wa.me/5926022583" variant="secondary">WhatsApp Us</Button>
             </div>
           </Card>
         </div>

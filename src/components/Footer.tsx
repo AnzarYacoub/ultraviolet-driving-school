@@ -2,8 +2,12 @@ import Link from "next/link";
 import { BrandLogo } from "@/components/BrandLogo";
 
 const quickLinks = [
+  ["Home", "/"],
   ["Packages", "/packages"],
   ["Book Class", "/book"],
+  ["Online Classes", "/#online-classes"],
+  ["Mock Test", "/#mock-test"],
+  ["Discount Card", "/#discount-card"],
   ["Student Dashboard", "/dashboard"],
   ["Admin Dashboard", "/admin"]
 ];
@@ -11,7 +15,7 @@ const quickLinks = [
 export function Footer() {
   return (
     <footer className="bg-brand-ink py-12 text-white">
-      <div className="container-shell grid gap-8 md:grid-cols-[1.4fr_1fr_1fr]">
+      <div className="container-shell grid gap-8 lg:grid-cols-[1.3fr_0.9fr_1fr_0.8fr]">
         <div>
           <div className="rounded-lg bg-white p-3 text-brand-ink md:w-fit">
             <BrandLogo />
@@ -25,12 +29,12 @@ export function Footer() {
           <ul className="mt-4 grid gap-2 text-sm text-white/70">
             <li>Phone/WhatsApp: 602-2583</li>
             <li>Email: Udsdrivingschool30@gmail.com</li>
-            <li>Facebook, TikTok, and Instagram links coming soon</li>
+            <li>Ultraviolet Driving School / Ultraviolet 592</li>
           </ul>
         </div>
         <div>
           <h3 className="font-bold">Quick Links</h3>
-          <ul className="mt-4 grid gap-2 text-sm text-white/70">
+          <ul className="mt-4 grid gap-2 text-sm text-white/70 sm:grid-cols-2 lg:grid-cols-1">
             {quickLinks.map(([label, href]) => (
               <li key={href}>
                 <Link href={href} className="hover:text-brand-yellow">
@@ -39,8 +43,20 @@ export function Footer() {
               </li>
             ))}
           </ul>
-          <p className="mt-6 text-xs text-white/40">Designed and developed as a first-stage frontend prototype.</p>
         </div>
+        <div>
+          <h3 className="font-bold">Social</h3>
+          <ul className="mt-4 grid gap-2 text-sm text-white/70">
+            <li>Facebook placeholder</li>
+            <li>TikTok placeholder</li>
+            <li>Instagram placeholder</li>
+            <li>YouTube placeholder</li>
+          </ul>
+        </div>
+      </div>
+      <div className="container-shell mt-10 border-t border-white/10 pt-6 text-xs leading-6 text-white/45">
+        <p>Copyright © 2026 Ultraviolet Driving School. All Rights Reserved.</p>
+        <p>Created by Anzar Yacoub - Websites Builder GY.</p>
       </div>
     </footer>
   );
