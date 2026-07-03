@@ -6,17 +6,19 @@ import type { PackageTier } from "@/data/mock";
 export function PackageCard({ item }: { item: PackageTier }) {
   return (
     <Card className={`relative flex h-full flex-col overflow-hidden transition duration-200 hover:-translate-y-1 hover:shadow-lift ${item.featured ? "border-brand-purple/35 ring-2 ring-brand-purple/10" : ""}`}>
-      {item.featured ? <div className="absolute right-4 top-4"><Badge tone="yellow">Most Popular</Badge></div> : null}
-      <div className="flex items-start justify-between gap-3">
+      <div className="flex flex-wrap items-start justify-between gap-3">
         <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-brand-purpleSoft text-brand-purple">
-          {item.type === "Premium" ? <Sparkles size={22} /> : item.type === "Beginner" ? <GraduationCap size={22} /> : <CarFront size={22} />}
+          {item.type === "Premium" ? <Sparkles size={22} /> : item.type === "Beginning Package" ? <GraduationCap size={22} /> : <CarFront size={22} />}
         </div>
-        <Badge tone={item.type === "Premium" ? "yellow" : "purple"}>{item.type}</Badge>
+        <div className="flex flex-wrap justify-end gap-2">
+          {item.featured ? <Badge tone="yellow">Most Popular</Badge> : null}
+          <Badge tone={item.type === "Premium" ? "yellow" : "purple"}>{item.type}</Badge>
+        </div>
       </div>
       <h3 className="mt-5 text-2xl font-black text-brand-ink">{item.name}</h3>
       <p className="mt-2 text-sm leading-6 text-black/70">{item.description}</p>
       <div className="mt-5 rounded-lg bg-black/[0.025] p-4">
-        <p className="text-xs font-bold uppercase tracking-[0.12em] text-black/40">Starting Price</p>
+        <p className="text-xs font-bold uppercase tracking-[0.12em] text-black/40">Package Price</p>
         <p className="mt-1 text-2xl font-black text-brand-ink">{item.price}</p>
         <div className="mt-3 grid gap-2 text-sm text-black/70">
           <p className="flex items-center gap-2"><Clock size={16} className="text-brand-purple" />{item.duration}</p>

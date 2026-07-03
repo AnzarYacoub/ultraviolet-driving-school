@@ -38,9 +38,9 @@ export default function AdminPackagesPage() {
           <div className="mt-5 grid gap-4">
             <Field label="Package Name" placeholder="Gold Package" />
             <TextArea label="Description" placeholder="Professional package description." />
-            <Field label="Price" placeholder="GYD $75,000" />
+            <Field label="Price" placeholder="$40,000" />
             <SelectField label="Session Duration Options"><option>1 hour and 2 hour sessions</option><option>1 hour only</option><option>2 hours only</option></SelectField>
-            <SelectField label="Package Type"><option>Beginner</option><option>Practical</option><option>Premium</option></SelectField>
+            <SelectField label="Package Type"><option>Beginning Package</option><option>Confidence</option><option>Foundation</option><option>Test Support</option><option>Premium</option></SelectField>
             <SelectField label="Status"><option>Active / Published</option><option>Inactive / Unpublished</option></SelectField>
           </div>
           <Button className="mt-6">Save Package</Button>

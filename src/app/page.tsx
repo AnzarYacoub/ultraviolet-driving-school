@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { BookOpenCheck, CalendarCheck, CarFront, CheckCircle2, ClipboardCheck, Clock, CreditCard, Crown, GraduationCap, MessageCircle, Route, ShieldCheck, Star, TicketCheck, Users } from "lucide-react";
+import { BookOpenCheck, CalendarCheck, CarFront, CheckCircle2, ClipboardCheck, Clock, CreditCard, Crown, GraduationCap, MessageCircle, PlayCircle, Route, ShieldCheck, Star, TicketCheck, Users } from "lucide-react";
 import { DigitalDiscountCard, OnlineClassCard, PackageCard, PartnerBusinessCard } from "@/components/Cards";
 import { PageShell } from "@/components/PageShell";
 import { Badge, Button, Card, Field, InfoTile, SectionHeader, TextArea } from "@/components/ui";
@@ -17,6 +17,17 @@ const heroFeatureCards = [
   { label: "Theory Support", value: "Live online classes and study preparation.", icon: <BookOpenCheck size={28} /> },
   { label: "Mock Tests", value: "Practice with confidence before exam day.", icon: <ClipboardCheck size={28} /> },
   { label: "Full Packages", value: "Teen, refresher, Bronze, Silver, Gold, and VIP.", icon: <Crown size={28} /> }
+];
+
+const lessonVideos = [
+  {
+    title: "Ultraviolet Driving School Lesson Preview",
+    id: "aHPM8pmaWZY"
+  },
+  {
+    title: "Ultraviolet Practical Driving Experience",
+    id: "dJ-z0ClOczU"
+  }
 ];
 
 const howItWorks = [
@@ -75,9 +86,9 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
-            <div className="relative min-h-[360px] lg:min-h-[560px]">
+            <div className="relative">
               <div className="absolute -inset-2 rounded-full bg-brand-purple/30 blur-3xl" />
-              <div className="relative h-[360px] overflow-hidden rounded-lg border border-white/15 bg-white/5 shadow-[0_36px_100px_rgba(0,0,0,0.42)] sm:h-[460px] lg:absolute lg:-right-28 lg:top-0 lg:h-[560px] lg:w-[calc(100%+7rem)] lg:rounded-l-[44%] lg:rounded-r-none">
+              <div className="relative h-[360px] overflow-hidden rounded-lg border border-white/15 bg-white/5 shadow-[0_36px_100px_rgba(0,0,0,0.42)] sm:h-[460px] lg:h-[560px] lg:rounded-l-[34%]">
                 <Image
                   src="/images/driving-lesson-hero.png"
                   alt="Driving instructor guiding a student vehicle through cones"
@@ -103,7 +114,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="relative z-10 mt-8 rounded-lg border border-white/20 bg-white p-4 text-brand-ink shadow-[0_24px_80px_rgba(0,0,0,0.3)] md:mt-[-1rem] md:p-6">
+          <div className="relative z-10 mt-10 rounded-lg border border-white/20 bg-white p-4 text-brand-ink shadow-[0_24px_80px_rgba(0,0,0,0.3)] md:p-6">
             <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
               {heroFeatureCards.map((item) => (
                 <div key={item.label} className="flex gap-4 border-black/10 pb-5 md:pb-0 lg:border-r lg:pr-5 last:lg:border-r-0">
@@ -117,6 +128,49 @@ export default function HomePage() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden bg-brand-ink py-16 text-white md:py-20">
+        <div className="pointer-events-none absolute -left-32 top-[-10rem] size-96 rounded-full bg-brand-purple/30 blur-3xl" />
+        <div className="pointer-events-none absolute bottom-[-12rem] right-[-10rem] size-[28rem] rounded-full bg-brand-yellow/10 blur-3xl" />
+        <div className="container-shell relative">
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <SectionHeader
+              tone="dark"
+              eyebrow="Watch Our Driving Lessons"
+              title="See Ultraviolet Driving School in action"
+              copy="Watch our driving school experience and get a better feel for the practical guidance, confidence building, and student support offered through Ultraviolet Driving School."
+            />
+            <Badge tone="yellow"><PlayCircle size={14} /> Muted autoplay enabled</Badge>
+          </div>
+          <div className="mt-8 grid gap-5 lg:grid-cols-2">
+            {lessonVideos.map((video) => (
+              <div key={video.id} className="overflow-hidden rounded-lg border border-white/15 bg-white/[0.06] p-3 shadow-[0_24px_80px_rgba(0,0,0,0.24)]">
+                <div className="relative aspect-video overflow-hidden rounded-md bg-black">
+                  <iframe
+                    className="absolute inset-0 h-full w-full"
+                    src={`https://www.youtube.com/embed/${video.id}?autoplay=1&mute=1&controls=1&rel=0&playsinline=1&loop=1&playlist=${video.id}`}
+                    title={video.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+                <div className="flex items-center justify-between gap-4 px-1 pb-1 pt-4">
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.14em] text-brand-yellow">Video Preview</p>
+                    <h3 className="mt-1 font-black">{video.title}</h3>
+                  </div>
+                  <div className="flex size-11 shrink-0 items-center justify-center rounded-md bg-brand-purple text-brand-yellow">
+                    <PlayCircle size={22} />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 text-sm leading-6 text-white/60">
+            Videos are embedded with muted autoplay and visible controls. Some browsers may still require a user tap before playback starts.
+          </p>
         </div>
       </section>
 
