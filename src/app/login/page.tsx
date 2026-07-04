@@ -4,7 +4,7 @@ import { Badge, Button, Card, Field } from "@/components/ui";
 
 export default function LoginPage() {
   return (
-    <main className="min-h-dvh bg-[radial-gradient(circle_at_top_right,#f6c94555,transparent_30%),linear-gradient(135deg,#f3ecfb,#ffffff)] px-4 py-10">
+    <main className="instructor-motif instructor-motif-light min-h-dvh bg-[radial-gradient(circle_at_top_right,#f6c94555,transparent_30%),linear-gradient(135deg,#f3ecfb,#ffffff)] px-4 py-10">
       <div className="mx-auto grid min-h-[calc(100vh-80px)] max-w-5xl items-center gap-8 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
           <BrandLogo />

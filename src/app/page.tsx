@@ -115,12 +115,12 @@ export default function HomePage() {
               <div className="absolute -inset-2 rounded-full bg-brand-purple/30 blur-3xl" />
               <div className="relative h-[360px] overflow-hidden rounded-lg border border-white/15 bg-white/5 shadow-[0_36px_100px_rgba(0,0,0,0.42)] sm:h-[460px] lg:h-[560px] lg:rounded-l-[34%]">
                 <Image
-                  src="/images/driving-lesson-hero.png"
-                  alt="Driving instructor guiding a student vehicle through cones"
+                  src="/images/hero-georgetown-driving.jpg"
+                  alt="Ultraviolet driving school car in Georgetown, Guyana"
                   fill
                   priority
                   sizes="(min-width: 1024px) 720px, 100vw"
-                  className="object-cover object-center lg:object-[48%_center]"
+                  className="object-cover object-[center_58%]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-brand-purpleDark/75 via-brand-purpleDark/20 to-black/10" />
                 <div className="absolute inset-y-0 left-0 hidden w-32 bg-gradient-to-r from-[#12051f] to-transparent lg:block" />
@@ -167,7 +167,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-white py-16 md:py-20">
+      <section className="instructor-motif instructor-motif-light bg-white py-16 md:py-20">
         <div className="container-shell grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
           <div>
             <Badge tone="purple">Welcome</Badge>
@@ -189,7 +189,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-brand-purpleSoft py-16 md:py-20">
+      <section className="instructor-motif instructor-motif-soft bg-brand-purpleSoft py-16 md:py-20">
         <div className="container-shell grid gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
           <Card className="relative overflow-hidden bg-brand-ink text-white">
             <div className="absolute -right-16 -top-16 size-56 rounded-full bg-brand-yellow/15" />
@@ -228,7 +228,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_right,rgba(246,201,69,0.24),transparent_32%),linear-gradient(135deg,#111014,#2a0f45_62%,#57228f)] py-16 text-white md:py-20">
+      <section className="instructor-motif instructor-motif-dark relative overflow-hidden bg-[radial-gradient(circle_at_top_right,rgba(246,201,69,0.24),transparent_32%),linear-gradient(135deg,#111014,#2a0f45_62%,#57228f)] py-16 text-white md:py-20">
         <div className="container-shell grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-center">
           <div>
             <Badge tone="yellow">Featured Booking Path</Badge>
@@ -405,7 +405,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="about" className="bg-brand-ink py-16 text-white md:py-20">
+      <section id="about" className="instructor-motif instructor-motif-dark bg-brand-ink py-16 text-white md:py-20">
         <div className="container-shell grid gap-8 md:grid-cols-[0.85fr_1.15fr]">
           <SectionHeader tone="dark" eyebrow="About" title="Built for safer, more confident drivers" copy="Ultraviolet Driving School provides practical driving training, theory preparation, vehicle basics education, and student support for persons learning to drive safely and confidently." />
           <div className="grid gap-4 sm:grid-cols-3">
@@ -416,7 +416,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-brand-purpleSoft py-16 md:py-20">
+      <section className="instructor-motif instructor-motif-soft bg-brand-purpleSoft py-16 md:py-20">
         <div className="container-shell">
           <SectionHeader eyebrow="Student Community" title="Be part of the Ultraviolet community" copy="Register, book your package, and stay connected to future student benefits, discount-card updates, and class announcements." />
           <div className="mt-8 grid gap-5 md:grid-cols-3">
@@ -431,7 +431,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="contact" className="py-16 md:py-20">
+      <section id="contact" className="instructor-motif instructor-motif-light py-16 md:py-20">
         <div className="container-shell grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <SectionHeader eyebrow="Stay Connected" title="Stay connected with Ultraviolet" copy="Contact the school for packages, practical bookings, theory class updates, mock test support, and discount-card programme details." />

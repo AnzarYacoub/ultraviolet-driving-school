@@ -7,7 +7,7 @@ import { packages } from "@/data/mock";
 export default function PackagesPage() {
   return (
     <PageShell>
-      <section className="relative overflow-hidden bg-[radial-gradient(circle_at_18%_18%,rgba(246,201,69,0.16),transparent_26%),radial-gradient(circle_at_78%_10%,rgba(87,34,143,0.72),transparent_32%),linear-gradient(135deg,#050207,#1a082d_48%,#09070d)] py-14 text-white">
+      <section className="instructor-motif instructor-motif-dark relative overflow-hidden bg-[radial-gradient(circle_at_18%_18%,rgba(246,201,69,0.16),transparent_26%),radial-gradient(circle_at_78%_10%,rgba(87,34,143,0.72),transparent_32%),linear-gradient(135deg,#050207,#1a082d_48%,#09070d)] py-14 text-white">
         <div className="pointer-events-none absolute -right-28 top-10 h-72 w-96 rounded-full border border-brand-yellow/25 bg-brand-purple/15" />
         <div className="container-shell">
           <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-end">

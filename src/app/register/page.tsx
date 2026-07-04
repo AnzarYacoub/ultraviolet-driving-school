@@ -5,7 +5,7 @@ import { packages } from "@/data/mock";
 
 export default function RegisterPage() {
   return (
-    <main className="min-h-dvh bg-[radial-gradient(circle_at_top_right,#f6c94555,transparent_30%),linear-gradient(135deg,#f3ecfb,#ffffff)] px-4 py-10">
+    <main className="instructor-motif instructor-motif-light min-h-dvh bg-[radial-gradient(circle_at_top_right,#f6c94555,transparent_30%),linear-gradient(135deg,#f3ecfb,#ffffff)] px-4 py-10">
       <div className="mx-auto max-w-4xl">
         <BrandLogo />
         <Card className="mt-8 border-brand-purple/15 shadow-lift">
