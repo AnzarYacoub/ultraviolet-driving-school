@@ -71,6 +71,20 @@ const communityActions = [
   { title: "Join the Discount Card Programme", href: "/dashboard/discount-card", icon: <TicketCheck size={22} /> }
 ];
 
+const storyStats = [
+  { label: "20+ years", copy: "Founded over 20 years ago", icon: <Clock size={21} /> },
+  { label: "Thousands trained", copy: "Students supported across Guyana", icon: <Users size={21} /> },
+  { label: "3 service areas", copy: "Georgetown, West Side, and East Bank", icon: <Route size={21} /> },
+  { label: "Confidence focused", copy: "Helping students overcome fear and anxiety", icon: <ShieldCheck size={21} /> }
+];
+
+const storyParagraphs = [
+  "Founded over 20 years ago by Gwenette Heritzen, a proud woman entrepreneur, Ultraviolet Driving School was built on one mission—to create safe, confident, and responsible drivers across Guyana.",
+  "Over the years, we have proudly trained thousands of students, making a positive difference on Guyana’s roads. Beyond teaching driving skills, we have helped many students overcome fear, anxiety, and past driving trauma, giving them the confidence to drive safely and independently.",
+  "Today, Ultraviolet Driving School proudly serves Georgetown, the West Side, and the East Bank, with plans to expand into two more regions. Our commitment remains the same: to provide professional driver education that helps save lives, time, and money while building safer communities.",
+  "At Ultraviolet Driving School, we don’t just teach people to drive—we build confident drivers for life."
+];
+
 export default function HomePage() {
   return (
     <PageShell>
@@ -167,7 +181,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="instructor-motif instructor-motif-light bg-white py-16 md:py-20">
+      <section className="instructor-motif instructor-motif-light bg-white/90 py-16 backdrop-blur md:py-20">
         <div className="container-shell grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
           <div>
             <Badge tone="purple">Welcome</Badge>
@@ -189,7 +203,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="instructor-motif instructor-motif-soft bg-brand-purpleSoft py-16 md:py-20">
+      <section className="instructor-motif instructor-motif-soft bg-brand-purpleSoft/90 py-16 backdrop-blur md:py-20">
         <div className="container-shell grid gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
           <Card className="relative overflow-hidden bg-brand-ink text-white">
             <div className="absolute -right-16 -top-16 size-56 rounded-full bg-brand-yellow/15" />
@@ -213,7 +227,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-white py-16 md:py-20">
+      <section className="bg-white/90 py-16 backdrop-blur md:py-20">
         <div className="container-shell">
           <SectionHeader eyebrow="Student Outcomes" title="What We Help You Do" copy="Every section of the platform points students toward practical confidence, safer decisions, and clearer test preparation." />
           <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -254,7 +268,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-brand-purpleSoft py-16 md:py-20">
+      <section className="bg-brand-purpleSoft/90 py-16 backdrop-blur md:py-20">
         <div className="container-shell">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <SectionHeader eyebrow="Services" title="How We Serve You" copy="From practical road sessions to theory preparation and student benefits, each service is shaped around a clearer driving journey." />
@@ -315,7 +329,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-b border-black/10 bg-white py-12">
+      <section className="border-b border-black/10 bg-white/90 py-12 backdrop-blur">
         <div className="container-shell">
           <div className="grid gap-4 md:grid-cols-4">
             {howItWorks.map((item) => (
@@ -345,10 +359,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-black/[0.025] py-16 md:py-20">
+      <section className="bg-white/80 py-16 backdrop-blur md:py-20">
         <div className="container-shell grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <SectionHeader eyebrow="Practical Booking" title="Book your driving class without confusion" copy="Classes run Monday to Sunday from 8:00 AM to 5:00 PM. Students request 1-hour or 2-hour sessions, book full packages, and follow a clear rescheduling policy." />
+            <SectionHeader eyebrow="Practical Booking" title="Book your driving class without confusion" copy="Classes run Monday to Sunday from 8 AM to 5 PM. Students request 1-hour or 2-hour sessions, book full packages, and follow a clear rescheduling policy." />
             <div className="mt-6 rounded-lg bg-brand-ink p-5 text-white">
               <p className="text-xs font-bold uppercase tracking-[0.14em] text-brand-yellow">Rescheduling rule</p>
               <p className="mt-2 text-sm leading-6 text-white/75">Notify the school 3 to 4 hours before class starts. Without timely notice, that session may be lost.</p>
@@ -356,7 +370,7 @@ export default function HomePage() {
           </div>
           <Card className="bg-white">
             <div className="grid gap-4 sm:grid-cols-2">
-              <InfoTile icon={<Clock size={18} />} label="Hours" value="8:00 AM to 5:00 PM" />
+              <InfoTile icon={<Clock size={18} />} label="Hours" value="8 AM to 5 PM" />
               <InfoTile icon={<CalendarCheck size={18} />} label="Days" value="Monday to Sunday" />
               <InfoTile icon={<Users size={18} />} label="Capacity" value="Up to 4 students per slot" />
               <InfoTile icon={<Route size={18} />} label="Sessions" value="1-hour or 2-hour options" />
@@ -377,7 +391,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="mock-test" className="bg-brand-purpleSoft py-16 md:py-20">
+      <section id="mock-test" className="bg-brand-purpleSoft/90 py-16 backdrop-blur md:py-20">
         <div className="container-shell grid items-center gap-8 lg:grid-cols-2">
           <SectionHeader eyebrow="Mock Test Prep" title="One-attempt theory practice with admin unlocks" copy="Students can prepare for the theoretical driving exam with multiple-choice tests. Admin can unlock or release another attempt when needed." />
           <Card>
@@ -405,18 +419,47 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="about" className="instructor-motif instructor-motif-dark bg-brand-ink py-16 text-white md:py-20">
-        <div className="container-shell grid gap-8 md:grid-cols-[0.85fr_1.15fr]">
-          <SectionHeader tone="dark" eyebrow="About" title="Built for safer, more confident drivers" copy="Ultraviolet Driving School provides practical driving training, theory preparation, vehicle basics education, and student support for persons learning to drive safely and confidently." />
-          <div className="grid gap-4 sm:grid-cols-3">
-            {["Practical driving classes", "Live theory preparation", "Vehicle basics pre-class learning"].map((item) => (
-              <div key={item} className="rounded-lg border border-white/10 bg-white/[0.08] p-5 text-sm font-bold text-white/80">{item}</div>
-            ))}
+      <section id="about" className="instructor-motif instructor-motif-dark relative overflow-hidden bg-brand-ink py-16 text-white md:py-24">
+        <div className="pointer-events-none absolute -left-28 top-12 size-72 rounded-full bg-brand-yellow/10 blur-3xl" />
+        <div className="container-shell grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+          <div>
+            <Badge tone="yellow">About Ultraviolet</Badge>
+            <h2 className="mt-5 text-4xl font-black tracking-normal md:text-5xl">Our Story</h2>
+            <p className="mt-5 max-w-md text-lg leading-8 text-white/72">
+              Professional driver education shaped by experience, patience, and a mission to build safer communities.
+            </p>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row lg:flex-col">
+              <Button href="/book" variant="secondary">Book a Class</Button>
+              <Button href="/packages" variant="outlineDark">View Packages</Button>
+            </div>
           </div>
+          <Card className="relative overflow-hidden border-white/15 bg-white/[0.96] p-5 text-brand-ink shadow-[0_30px_90px_rgba(0,0,0,0.32)] md:p-7">
+            <div className="absolute -right-14 -top-16 size-56 rounded-full bg-brand-yellow/20" />
+            <div className="relative grid gap-5 text-base leading-8 text-black/72">
+              {storyParagraphs.map((paragraph, index) => (
+                <p key={paragraph} className={index === storyParagraphs.length - 1 ? "font-bold text-brand-purpleDark" : ""}>
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+            <div className="relative mt-8 grid gap-4 sm:grid-cols-2">
+              {storyStats.map((item) => (
+                <div key={item.label} className="rounded-lg border border-brand-purple/12 bg-white p-4 shadow-soft">
+                  <div className="flex items-start gap-3">
+                    <div className="flex size-11 shrink-0 items-center justify-center rounded-md bg-brand-purple text-brand-yellow">{item.icon}</div>
+                    <div>
+                      <h3 className="font-black text-brand-ink">{item.label}</h3>
+                      <p className="mt-1 text-sm leading-6 text-black/60">{item.copy}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Card>
         </div>
       </section>
 
-      <section className="instructor-motif instructor-motif-soft bg-brand-purpleSoft py-16 md:py-20">
+      <section className="instructor-motif instructor-motif-soft bg-brand-purpleSoft/90 py-16 backdrop-blur md:py-20">
         <div className="container-shell">
           <SectionHeader eyebrow="Student Community" title="Be part of the Ultraviolet community" copy="Register, book your package, and stay connected to future student benefits, discount-card updates, and class announcements." />
           <div className="mt-8 grid gap-5 md:grid-cols-3">

@@ -37,7 +37,7 @@ export default function BookPage() {
           </Card>
         </div>
       </section>
-      <section className="py-14">
+      <section className="bg-white/80 py-14 backdrop-blur">
         <div className="container-shell grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <Card>
             <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">

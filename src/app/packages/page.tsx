@@ -27,14 +27,14 @@ export default function PackagesPage() {
           </div>
         </div>
       </section>
-      <section className="border-b border-black/10 bg-white py-8">
+      <section className="border-b border-black/10 bg-white/90 py-8 backdrop-blur">
         <div className="container-shell grid gap-4 md:grid-cols-3">
           <InfoTile icon={<CarFront size={18} />} label="Practical Focus" value="Road lessons and confidence building" />
           <InfoTile icon={<Route size={18} />} label="Progress Path" value="Beginner to priority support" />
           <InfoTile icon={<TrafficCone size={18} />} label="Class Readiness" value="Theory, vehicle basics, and mock prep" />
         </div>
       </section>
-      <section className="py-14">
+      <section className="py-14 md:py-16">
         <div className="container-shell grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {packages.map((item) => <PackageCard key={item.name} item={item} />)}
         </div>
